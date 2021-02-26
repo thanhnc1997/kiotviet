@@ -105,4 +105,23 @@
             top: 100% !important;
         }
     }
+    .nav-tabs {
+        border: 0;
+        .nav-item {
+            margin: 0;
+            white-space: nowrap;
+        }
+        .nav-link {
+            background: #0077b4;
+            border-radius: 0;
+            border: 0;
+            color: c-base-color(grey, 2);
+            font-size: 14px;
+            padding: 6px 12px;
+            &.active {
+                background: c-base-color(light, 2);
+                color: c-base-color(blue, 1);
+            }
+        }
+    }
 }

@@ -1,77 +1,284 @@
-<div class="pt-3">
-    <div class="row type-1">
-        <div class="col-md-8">
-            <div class="bg-white rounded-1 overflow-hidden mb-3">
-                <div style="overflow-y: auto; height: 400px;">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Mã sản phẩm</th>
-                                <th>Tên sản phẩm</th>
-                                <th>Số lượng</th>
-                                <th>Đơn giá</th>
-                                <th>Tổng</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>SP0001</td>
-                                <td>Sản phẩm 1</td>
-                                <td>3</td>
-                                <td>2,000,000</td>
-                                <td>6,000,000</td>
-                                <td>
-                                    <button class="btn btn-danger p-1">Xóa</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>SP0001</td>
-                                <td>Sản phẩm 1</td>
-                                <td>3</td>
-                                <td>2,000,000</td>
-                                <td>6,000,000</td>
-                                <td>
-                                    <button class="btn btn-danger p-1">Xóa</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>SP0001</td>
-                                <td>Sản phẩm 1</td>
-                                <td>3</td>
-                                <td>2,000,000</td>
-                                <td>6,000,000</td>
-                                <td>
-                                    <button class="btn btn-danger p-1">Xóa</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>SP0001</td>
-                                <td>Sản phẩm 1</td>
-                                <td>3</td>
-                                <td>2,000,000</td>
-                                <td>6,000,000</td>
-                                <td>
-                                    <button class="btn btn-danger p-1">Xóa</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+<div class="c-header">
+    <nav class="c-header__bottom">
+        <div class="d-flex align-items-center">
+            <div class="col-md-4 py-2">
+                <form class="">
+                    <i class="fas fa-search"></i>
+                    <input
+                        type="text"
+                        placeholder="Tìm kiếm"
+                        class=""
+                    >
+                </form>
+            </div>
+            <div class="d-flex align-self-stretch overflow-auto">
+                <ul
+                    role="tablist"
+                    class="nav nav-tabs align-self-stretch"
+                    style="flex-wrap: nowrap;"
+                >
+                    <li class="nav-item">
+                        <a
+                            role="tab"
+                            href="#bill1"
+                            data-toggle="tab"
+                            class="nav-link h-100 d-flex align-items-center active"
+                        >
+                            Hóa đơn 1
+                            <span class="ml-3">
+                                <i class="fas fa-times"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            role="tab"
+                            href="#bill2"
+                            data-toggle="tab"
+                            class="nav-link h-100 d-flex align-items-center"
+                        >
+                            Hóa đơn 2
+                            <span class="ml-3">
+                                <i class="fas fa-times"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <button class="btn btn-blue1">
+                <i class="fa fa-plus"></i>
+            </button>
+            <div class="ml-auto d-flex align-items-center">
+                <button class="btn btn-blue1">
+                    <i class="fa fa-map-marker-alt"></i>
+                </button>
+                <button
+                    class="btn btn-blue1"
+                    (click)="openOrderListModal()"
+                >
+                    <i class="fa fa-recycle"></i>
+                </button>
+                <button
+                    class="btn btn-blue1"
+                    (click)="openReturnCreateModal()"
+                >
+                    <i class="fa fa-reply-all"></i>
+                </button>
+                <button
+                    class="btn btn-blue1"
+                    (click)="openSyncDataModal()"
+                >
+                    <i class="fa fa-sync-alt"></i>
+                </button>
+                <button
+                    class="btn btn-blue1"
+                    (click)="openPrintModal()"
+                >
+                    <i class="fa fa-print"></i>
+                </button>
+                <ng-container>
+                    <div ngbDropdown>
+                        <button
+                            ngbDropdownToggle
+                            class="btn btn-blue1"
+                        >
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <div
+                            ngbDropdownMenu
+                            class="dropdown-menu"
+                        >
+                            <a class="dropdown-item">
+                                <i class="fa fa-align-left fa-fw mr-2"></i>
+                                Xem báo cáo cuối ngày
+                            </a>
+                            <a
+                                class="dropdown-item"
+                                (click)="openOrderListModal()"
+                            >
+                                <i class="fa fa-recycle mr-2"></i>
+                                Xử lý đặt hàng
+                            </a>
+                            <a
+                                class="dropdown-item"
+                                (click)="openReturnCreateModal()"
+                            >
+                                <i class="fa fa-reply-all mr-2"></i>
+                                Chọn hóa đơn trả hàng
+                            </a>
+                            <a
+                                class="dropdown-item"
+                                (click)="openMakeRecipt()"
+                            >
+                                <i class="fa fa-file-alt mr-2"></i>
+                                Lập phiếu thu
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="fa fa-upload mr-2"></i>
+                                Import
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="fa fa-eye-slash mr-2"></i>
+                                Tùy chọn hiển thị
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="fa fa-list-alt mr-2"></i>
+                                Quản lý
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="fa fa-external-link-alt mr-2"></i>
+                                Đăng xuất
+                            </a>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="py-1">
+    <div
+        class="row m-0 type-1"
+        style="height: calc(100vh - 65px);"
+    >
+        <div class="col-md-9">
+            <div class="tab-content">
+                <div
+                    class="bg-white rounded-1 overflow-hidden mb-3 tab-pane active show"
+                    id="bill1"
+                >
+                    <div style="overflow-y: auto; height: 400px;">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Mã sản phẩm</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Đơn giá</th>
+                                    <th>Tổng</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>SP0001</td>
+                                    <td>Sản phẩm 1</td>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            value="1"
+                                        >
+                                    </td>
+                                    <td>2,000,000</td>
+                                    <td>6,000,000</td>
+                                    <td>
+                                        <button class="btn btn-danger btn-sm">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>SP0001</td>
+                                    <td>Sản phẩm 1</td>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            value="1"
+                                        >
+                                    </td>
+                                    <td>2,000,000</td>
+                                    <td>6,000,000</td>
+                                    <td>
+                                        <button class="btn btn-danger btn-sm">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>SP0001</td>
+                                    <td>Sản phẩm 1</td>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            value="1"
+                                        >
+                                    </td>
+                                    <td>2,000,000</td>
+                                    <td>6,000,000</td>
+                                    <td>
+                                        <button class="btn btn-danger btn-sm">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div
+                    class="bg-white rounded-1 overflow-hidden mb-3 tab-pane"
+                    id="bill2"
+                >
+                    <div style="overflow-y: auto; height: 400px;">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Mã sản phẩm</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Đơn giá</th>
+                                    <th>Tổng</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>SP0001</td>
+                                    <td>Sản phẩm 1</td>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            value="1"
+                                        >
+                                    </td>
+                                    <td>2,000,000</td>
+                                    <td>6,000,000</td>
+                                    <td>
+                                        <button class="btn btn-danger btn-sm">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div>
                 <div class="mb-2">
-                    <button class="btn btn-sm btn-orange mr-2">
+                    <button
+                        class="btn btn-sm btn-outline-secondary mr-2"
+                        title="Tách hàng hóa liên quan"
+                    >
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button
+                        class="btn btn-sm btn-outline-secondary mr-2"
+                        title="Lọc theo thuộc tính hàng hóa"
+                    >
                         <i class="fas fa-filter"></i>
                     </button>
-                    <button class="btn btn-sm btn-orange mr-2">
+                    <button
+                        class="btn btn-sm btn-outline-secondary mr-2"
+                        title="Lọc theo nhóm hàng"
+                    >
                         <i class="fas fa-list-ul"></i>
                     </button>
                 </div>
                 <div class="product-list">
                     <div class="row">
                         <div class="col">
-                            <div class="item bg-white p-2">
+                            <div class="item">
                                 <div class="image">
                                     <img src="./assets/media/images/prd_1.png">
                                 </div>
@@ -81,7 +288,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="item bg-white p-2">
+                            <div class="item">
                                 <div class="image">
                                     <img src="./assets/media/images/prd_2.png">
                                 </div>
@@ -91,7 +298,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="item bg-white p-2">
+                            <div class="item">
                                 <div class="image">
                                     <img src="./assets/media/images/prd_3.png">
                                 </div>
@@ -101,7 +308,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="item bg-white p-2">
+                            <div class="item">
                                 <div class="image">
                                     <img src="./assets/media/images/prd_1.png">
                                 </div>
@@ -111,7 +318,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="item bg-white p-2">
+                            <div class="item">
                                 <div class="image">
                                     <img src="./assets/media/images/prd_2.png">
                                 </div>
@@ -124,15 +331,22 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="p-3 bg-white rounded-1">
-                <div class="row m-0 mb-3">
-                    <div class="sales-man">
+        <div class="col-md-3">
+            <div class="p-3 bg-white rounded-1 h-100 d-flex flex-column">
+                <div class="row m-0 mb-2">
+                    <div class="sales-man d-flex align-items-center">
                         <i class="far fa-user-circle mr-2"></i>
-                        <span>Thanh</span>
+                        <select
+                            name=""
+                            class="form-control border-0"
+                        >
+                            <option value="1">Thanh</option>
+                            <option value="2">Hùng</option>
+                            <option value="3">Cường</option>
+                        </select>
                     </div>
                 </div>
-                <div class="d-flex align-items-center w-100 input-with-cancel mb-3">
+                <div class="d-flex align-items-center w-100 input-with-cancel mb-2">
                     <i class="fa fa-search mr-2"></i>
                     <input
                         type="text"
@@ -140,7 +354,7 @@
                         placeholder="Tìm kiếm khách hàng"
                     >
                 </div>
-                <div class="row m-0 mb-4 align-items-center">
+                <div class="row m-0 mb-3 align-items-center">
                     <div class="mr-auto d-flex align-items-center">
                         <i class="fas fa-tag mr-2"></i>
                         <select
@@ -148,6 +362,7 @@
                             class="form-control"
                         >
                             <option value="1">Bảng giá chung</option>
+                            <option value="2">Bảng giá riêng</option>
                         </select>
                     </div>
                     <div class="mr-4">
@@ -190,7 +405,7 @@
                         </div>
                     </ng-container>
                 </div>
-                <div>
+                <div class="d-flex flex-column flex-grow-1">
                     <div class="sale-tab">
                         <ul
                             role="tablist"
@@ -199,7 +414,6 @@
                             <li class="nav-item">
                                 <a
                                     role="tab"
-                                    id="profile-tab"
                                     href="#bills"
                                     data-toggle="tab"
                                     class="nav-link active"
@@ -210,7 +424,6 @@
                             <li class="nav-item">
                                 <a
                                     role="tab"
-                                    id="history-tab"
                                     href="#order"
                                     data-toggle="tab"
                                     class="nav-link"
@@ -218,31 +431,69 @@
                                     Đặt hàng
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a
+                                    role="tab"
+                                    href="#"
+                                    data-toggle="tab"
+                                    class="nav-link"
+                                >
+                                    Sửa hàng
+                                </a>
+                            </li>
                         </ul>
                     </div>
-                    <div class="tab-content">
+                    <div class="tab-content sale-tab flex-grow-1">
                         <form
-                            class="tab-pane active show"
+                            class="tab-pane active show h-100 flex-column"
                             id="bills"
                         >
                             <div class="form-group d-flex justify-content-between mb-2">
-                                <span class="font-weight-bold">Tổng tiền</span>
+                                <span>
+                                    Tổng tiền
+                                    <span class="d-inline-block py-1 px-2 border rounded">
+                                        4
+                                    </span>
+                                </span>
                                 <span>0</span>
                             </div>
-                            <div class="form-group d-flex justify-content-between mb-2">
-                                <span class="font-weight-bold">Giảm giá</span>
-                                <span>0</span>
+                            <div class="form-group d-flex align-items-center justify-content-between mb-2">
+                                <span>Giảm giá</span>
+                                <div class="col-md-4">
+                                    <input
+                                        type="text"
+                                        class="form-control py-0"
+                                    >
+                                </div>
                             </div>
-                            <div class="form-group d-flex justify-content-between mb-2">
+                            <div class="form-group d-flex align-items-center justify-content-between mb-2">
                                 <span class="font-weight-bold">Khách cần trả</span>
                                 <span class="font-weight-bold text-success">0</span>
                             </div>
+                            <div class="form-group d-flex align-items-center mb-2">
+                                <span>
+                                    Khách thanh toán <br> <span class="small">Thẻ</span>
+                                </span>
+                                <button
+                                    class="ml-auto btn"
+                                    type="button"
+                                    (click)="openPaymentMethod()"
+                                >
+                                    <i class="far fa-credit-card"></i>
+                                </button>
+                                <div class="col-md-4">
+                                    <input
+                                        type="text"
+                                        class="form-control py-0"
+                                    >
+                                </div>
+                            </div>
                             <div class="form-group d-flex justify-content-between mb-5">
-                                <span class="font-weight-bold">Tiền trả khách</span>
+                                <span>Tiền trả khách</span>
                                 <span>0</span>
                             </div>
-                            <div class="d-flex w-100 input-with-cancel mb-5">
-                                <i class="fa fa-pen"></i>
+                            <div class="d-flex w-100 input-with-cancel">
+                                <i class="fa fa-pen mr-2"></i>
                                 <input
                                     type="text"
                                     class="w-100"
@@ -251,34 +502,62 @@
                             </div>
                             <button
                                 type="submit"
-                                class="mt-4 w-100 btn btn-success py-3"
+                                class="mt-auto w-100 btn btn-success py-3"
                                 (click)="onCheckOut()"
                             >
                                 Thanh toán
                             </button>
                         </form>
                         <form
-                            class="tab-pane"
+                            class="tab-pane h-100 flex-column"
                             id="order"
                         >
                             <div class="form-group d-flex justify-content-between mb-2">
-                                <span class="font-weight-bold">Tổng tiền</span>
+                                <span>
+                                    Tổng tiền
+                                    <span class="d-inline-block py-1 px-2 border rounded">
+                                        4
+                                    </span>
+                                </span>
                                 <span>0</span>
                             </div>
-                            <div class="form-group d-flex justify-content-between mb-2">
-                                <span class="font-weight-bold">Giảm giá</span>
-                                <span>0</span>
+                            <div class="form-group d-flex align-items-center justify-content-between mb-2">
+                                <span>Giảm giá</span>
+                                <div class="col-md-4">
+                                    <input
+                                        type="text"
+                                        class="form-control py-0"
+                                    >
+                                </div>
                             </div>
-                            <div class="form-group d-flex justify-content-between mb-2">
+                            <div class="form-group d-flex align-items-center justify-content-between mb-2">
                                 <span class="font-weight-bold">Khách cần trả</span>
                                 <span class="font-weight-bold text-success">0</span>
                             </div>
+                            <div class="form-group d-flex align-items-center mb-2">
+                                <span>
+                                    Khách thanh toán <br> <span class="small">Thẻ</span>
+                                </span>
+                                <button
+                                    class="ml-auto btn"
+                                    type="button"
+                                    (click)="openPaymentMethod()"
+                                >
+                                    <i class="far fa-credit-card"></i>
+                                </button>
+                                <div class="col-md-4">
+                                    <input
+                                        type="text"
+                                        class="form-control py-0"
+                                    >
+                                </div>
+                            </div>
                             <div class="form-group d-flex justify-content-between mb-5">
-                                <span class="font-weight-bold">Tiền trả khách</span>
+                                <span>Tiền trả khách</span>
                                 <span>0</span>
                             </div>
-                            <div class="d-flex w-100 input-with-cancel mb-5">
-                                <i class="fa fa-pen"></i>
+                            <div class="d-flex w-100 input-with-cancel">
+                                <i class="fa fa-pen mr-2"></i>
                                 <input
                                     type="text"
                                     class="w-100"
@@ -287,7 +566,7 @@
                             </div>
                             <button
                                 type="submit"
-                                class="mt-4 w-100 btn btn-success py-3"
+                                class="mt-auto w-100 btn btn-success py-3"
                                 (click)="onCreateOrder()"
                             >
                                 Đặt hàng

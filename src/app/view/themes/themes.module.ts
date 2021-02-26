@@ -9,16 +9,13 @@ import { PartialsModule } from '../partials/partials.module';
 
 // Components
 import { LayoutComponent } from './layout/layout.component';
-import { HeaderBottomComponent } from './header/header-bottom/header-bottom.component';
 
 @NgModule({
     declarations: [
-        LayoutComponent,
-        HeaderBottomComponent
+        LayoutComponent
     ],
     exports: [
-        LayoutComponent,
-        HeaderBottomComponent
+        LayoutComponent
     ],
     imports: [
         CommonModule,
