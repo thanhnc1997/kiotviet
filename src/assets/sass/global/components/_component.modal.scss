@@ -1,0 +1,100 @@
+.modal {
+    .modal-header {
+        background: c-base-color(blue,1);
+        font-weight: 600;
+        color: c-base-color(light, 1);
+        &.solid {
+            border-bottom: none;
+        }
+        .close {
+            outline: none;
+            text-shadow: none;
+            color: c-base-color(light, 1);
+            font-weight: normal;
+        }
+    }
+
+    .modal-nav {
+        background: #E9E5D9;
+        color: c-base-color(dark, 3);
+        padding: 0 1rem;
+
+        .nav-item {
+            .nav-link {
+                color: c-base-color(dark, 3);
+                font-size: 14px;
+            }
+        }
+
+        &.type-2 {
+            background: transparent;
+            padding: 0;
+            .nav-item {
+                .nav-link {
+                    border-color: transparent;
+                    border-bottom: 2px solid transparent;
+                    color: c-base-color(grey, 1);
+                    &.active {
+                        color: c-base-color(dark, 1);
+                        border-bottom-color: #28a745;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+
+    .modal-body {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .modal-footer {
+        border-top: none;
+        padding-bottom: 1.7rem;
+    }
+
+    // Desktop(576px and above)
+    // @include c-media-above(sm) {
+    //     &-xl {
+    //         max-width: 546px;
+    //     }
+    // }
+
+    // Desktop(768px and above)
+    // @include c-media-above(md) {
+    //     &-xl {
+    //         max-width: 738px;
+    //     }
+    // }
+
+    // Desktop(1024px and above)
+    // @include c-media-above(lg) {
+    //     &-xl {
+    //         max-width: 994px;
+    //     }
+    // }
+
+    // Desktop(1399px and above)
+    // @include c-media-above(xl) {
+    //     &-xl {
+    //         max-width: 1024px;
+    //     }
+    // }
+    &-xl {
+        max-width: 1024px;
+    }
+
+    &.modal-bottom {
+        height: auto;
+        top: auto;
+        bottom: 0;
+        .modal-dialog {
+            margin-bottom: 5px;
+        }
+    }
+    .modal-content {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+}

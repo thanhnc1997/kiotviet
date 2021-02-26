@@ -1,0 +1,96 @@
+<ng-container>
+    <div class="modal-header solid">
+        <span>
+            Xử lý đơn hàng
+        </span>
+        <button
+            type="button"
+            class="close"
+            aria-label="Close"
+            (click)="onClose()"
+        >
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-3">
+                <p class="filter-title">Tìm kiếm</p>
+                <div class="form-group mb-2">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Theo mã đặt hàng"
+                    >
+                </div>
+                <div class="form-group mb-2">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Theo khách hàng"
+                    >
+                </div>
+                <div class="form-group mb-2">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Theo ghi chú đặt hàng"
+                    >
+                </div>
+                <div class="form-group mb-2">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Theo mã hàng"
+                    >
+                </div>
+                <div class="form-group mb-4">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Theo tên hàng"
+                    >
+                </div>
+                <p class="filter-title">Thời gian</p>
+                <div class="form-group mb-2">
+                    <input
+                        type="date"
+                        class="form-control"
+                    >
+                </div>
+                <div class="form-group">
+                    <input
+                        type="date"
+                        class="form-control"
+                    >
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="rounded-1 overflow-hidden">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Mã đặt hàng</th>
+                                <th>Thời gian</th>
+                                <th>Khách hàng</th>
+                                <th>Tổng cộng</th>
+                                <th>Trạng thái</th>
+                                <th>Ghi chú</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

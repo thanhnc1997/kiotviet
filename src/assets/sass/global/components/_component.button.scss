@@ -1,0 +1,45 @@
+/** BUTTON STYLE */
+.btn-blue1 {
+    background: c-base-color(blue, 1);
+    color: c-base-color(light, 1);
+    &:hover {
+        color: c-base-color(light, 1);
+    }
+}
+.btn-blue2 {
+    background: c-base-color(blue, 2);
+    color: c-base-color(light, 1);
+}
+.btn-orange {
+    background: c-base-color(orange, 1);
+    color: c-base-color(light, 1);
+}
+.btn-brown {
+    background: c-base-color(brown, 1);
+    color: c-base-color(dark, 3);
+    &.active {
+        background: c-base-color(orange, 1);
+        color: c-base-color(light, 1);
+    }
+    &[disabled] {
+        opacity: .4;
+    }
+}
+.btn-brown2 {
+    background: c-base-color(brown, 2);
+    color: c-base-color(light, 1);
+}
+
+.btn-grey {
+    background: c-base-color(grey, 3);
+    color: c-base-color(dark, 3);
+    &.active {
+        background: c-base-color(blue, 1);
+        color: c-base-color(light, 1);
+    }
+}
+
+.btn-teal {
+    background: #2BC2BC;
+    color: c-base-color(light, 1);
+}

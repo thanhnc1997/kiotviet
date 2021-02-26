@@ -1,0 +1,23 @@
+<ng-container>
+    <!-- begin:: header component -->
+    <div class="c-header">
+        <c-header-bottom></c-header-bottom>
+    </div>
+    <!-- end:: header component -->
+
+    <!-- begin:: content -->
+    <div class="c-container--fluid">
+        <router-outlet></router-outlet>
+    </div>
+    <!-- end:: content -->
+
+    <!-- begin:: loading -->
+    <div class="c-loading c-loading--hidden">
+        <div class="c-loading__status spinner-border m-5">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- end:: loading -->
+
+    <app-toast-container></app-toast-container>
+</ng-container>

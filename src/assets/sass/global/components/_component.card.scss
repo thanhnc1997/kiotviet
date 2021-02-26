@@ -1,0 +1,24 @@
+.card {
+    box-shadow: $c-elevate-shadow, $c-elevate-shadow;
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    &-pointer {
+        cursor: pointer;
+    }
+    
+    &-light {
+        background-color: c-base-color(light, 3);
+        font-weight: bold;
+        font-size: .8rem;
+    }
+}
+
+
+.card-body {
+    textarea {
+        border: 0;
+        resize: none;
+    }
+}

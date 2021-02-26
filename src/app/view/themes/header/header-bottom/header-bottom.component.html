@@ -1,0 +1,99 @@
+<nav class="c-header__bottom">
+    <div class="d-flex align-items-center">
+        <div class="col-md-4 py-2">
+            <form class="">
+                <i class="fas fa-search"></i>
+                <input
+                    type="text"
+                    placeholder="Tìm kiếm"
+                    class=""
+                >
+            </form>
+        </div>
+        <div class="ml-auto d-flex align-items-center">
+            <button class="btn btn-blue1">
+                <i class="fa fa-map-marker-alt"></i>
+            </button>
+            <button
+                class="btn btn-blue1"
+                (click)="openOrderListModal()"
+            >
+                <i class="fa fa-recycle"></i>
+            </button>
+            <button
+                class="btn btn-blue1"
+                (click)="openReturnCreateModal()"
+            >
+                <i class="fa fa-reply-all"></i>
+            </button>
+            <button
+                class="btn btn-blue1"
+                (click)="openSyncDataModal()"
+            >
+                <i class="fa fa-sync-alt"></i>
+            </button>
+            <button
+                class="btn btn-blue1"
+                (click)="openPrintModal()"
+            >
+                <i class="fa fa-print"></i>
+            </button>
+            <ng-container>
+                <div ngbDropdown>
+                    <button
+                        ngbDropdownToggle
+                        class="btn btn-blue1"
+                    >
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <div
+                        ngbDropdownMenu
+                        class="dropdown-menu"
+                    >
+                        <a class="dropdown-item">
+                            <i class="fa fa-align-left fa-fw mr-2"></i>
+                            Xem báo cáo cuối ngày
+                        </a>
+                        <a
+                            class="dropdown-item"
+                            (click)="openOrderListModal()"
+                        >
+                            <i class="fa fa-recycle mr-2"></i>
+                            Xử lý đặt hàng
+                        </a>
+                        <a
+                            class="dropdown-item"
+                            (click)="openReturnCreateModal()"
+                        >
+                            <i class="fa fa-reply-all mr-2"></i>
+                            Chọn hóa đơn trả hàng
+                        </a>
+                        <a
+                            class="dropdown-item"
+                            (click)="openMakeRecipt()"
+                        >
+                            <i class="fa fa-file-alt mr-2"></i>
+                            Lập phiếu thu
+                        </a>
+                        <a class="dropdown-item">
+                            <i class="fa fa-upload mr-2"></i>
+                            Import
+                        </a>
+                        <a class="dropdown-item">
+                            <i class="fa fa-eye-slash mr-2"></i>
+                            Tùy chọn hiển thị
+                        </a>
+                        <a class="dropdown-item">
+                            <i class="fa fa-list-alt mr-2"></i>
+                            Quản lý
+                        </a>
+                        <a class="dropdown-item">
+                            <i class="fa fa-external-link-alt mr-2"></i>
+                            Đăng xuất
+                        </a>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</nav>

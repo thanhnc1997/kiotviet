@@ -1,0 +1,106 @@
+<ng-container>
+    <div class="modal-header solid">
+        <span>
+            Chọn hóa đơn trả hàng
+        </span>
+        <button
+            type="button"
+            class="close"
+            aria-label="Close"
+            (click)="onClose()"
+        >
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <form class="modal-body">
+        <div class="row">
+            <div class="col-md-3">
+                <p class="filter-title">Tìm kiếm</p>
+                <div class="form-group mb-2">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Theo mã đơn"
+                    >
+                </div>
+                <div class="form-group mb-2">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Theo mã vận đơn bán"
+                    >
+                </div>
+                <div class="form-group mb-2">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Theo khách hàng hoặc ĐT"
+                    >
+                </div>
+                <div class="form-group mb-2">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Theo mã hàng"
+                    >
+                </div>
+                <div class="form-group mb-4">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Theo tên hàng"
+                    >
+                </div>
+                <p class="filter-title">Thời gian</p>
+                <div class="form-group mb-2">
+                    <input
+                        type="date"
+                        class="form-control"
+                    >
+                </div>
+                <div class="form-group">
+                    <input
+                        type="date"
+                        class="form-control"
+                    >
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="rounded-1 overflow-hidden">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Mã hóa đơn</th>
+                                <th>Ngày tạo</th>
+                                <th>Khách hàng</th>
+                                <th>Nhân viên</th>
+                                <th>Khách hàng</th>
+                                <th>Tổng cộng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-right">
+                    <button
+                        type="submit"
+                        class="btn btn-success"
+                        (click)="onSubmit()"
+                    >
+                        <i class="fa fa-reply-all mr-2"></i>
+                        Trả nhanh
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</ng-container>
